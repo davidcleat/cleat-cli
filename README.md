@@ -120,7 +120,7 @@ cleat wait  [--line <id|phone|label>] [--timeout <seconds>] [--from <sender>]
 ## How to get an API key
 
 1. Create a Cleat account at [cleat.so](https://cleat.so) and subscribe to a line.
-2. Verify your identity once, as the line's owner. Until you do, the line runs and keeps every text it receives, but nothing can be read and this tool will report a `403`.
+2. Verify your identity once, as the line's owner. Until you do, the line runs and keeps every text it receives, but nothing can be read: `cleat lines` still works, and `cleat messages` and `cleat wait` report a `403`.
 3. In **workspace settings**, create an API key. It starts with `clt_` and is shown once, so copy it then. Put it in `CLEAT_API_KEY`.
 
 A key belongs to one workspace. You can narrow it when you create it: to named lines, and to a date it stops working — which is what makes a key safe to put in a CI secret. A line outside a key's scope reports "not found", exactly like a line in another workspace, so if `cleat lines` shows fewer lines than you expect, check the key's scope.
