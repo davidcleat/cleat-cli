@@ -39,6 +39,6 @@
     "cleat": "node ./bin/cleat.js"
   },
   "dependencies": {
-    "cleatapi": "git+https://github.com/davidcleat/cleat-js.git"
+    "cleatapi": "^0.1.0"
   }
 }

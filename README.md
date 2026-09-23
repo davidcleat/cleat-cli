@@ -23,13 +23,13 @@ npm install -g cleatapi-cli
 cleat lines
 ```
 
-The package is `cleatapi-cli` and it installs two names for the same command, `cleat` and `cleatapi`. The bare name `cleat` on npm belongs to an unrelated command line tool published in 2015, so `npx cleat` would run that instead of this.
-
-Until the first release lands on npm, run it from this repository:
+or run it without installing:
 
 ```sh
-npx github:davidcleat/cleat-cli lines
+npx cleatapi-cli lines
 ```
+
+The package is [`cleatapi-cli`](https://www.npmjs.com/package/cleatapi-cli) and it installs two names for the same command, `cleat` and `cleatapi`. The bare name `cleat` on npm belongs to an unrelated command line tool published in 2015, so `npx cleat` would run that instead of this.
 
 ## Use it
 
@@ -143,7 +143,7 @@ git clone https://github.com/davidcleat/cleat-cli.git
 cd cleat-cli && npm install && npm test
 ```
 
-`npm install` fetches `cleatapi` from its own repository and builds it, so nothing has to be checked out beside this. The lockfile is not committed: npm rewrites a GitHub dependency to `git+ssh`, which fails for anyone without SSH keys on GitHub. Every command takes its client, its output writers and its clock as arguments, so the tests use a fake client: no network, no sleeping, no API key.
+The one dependency, [`cleatapi`](https://www.npmjs.com/package/cleatapi), comes from npm like any other. Every command takes its client, its output writers and its clock as arguments, so the tests use a fake client: no network, no sleeping, no API key.
 
 `CLEAT_BASE_URL` points the CLI at another host, which is how you drive it against a local stub of the API.
 
