@@ -1,4 +1,4 @@
-# cleat-cli
+# cleatapi-cli
 
 A command line tool for your own [Cleat](https://cleat.so) lines: list them, stream the codes that arrive, or block until one does.
 
@@ -6,7 +6,7 @@ A command line tool for your own [Cleat](https://cleat.so) lines: list them, str
 CODE=$(cleat wait --line "Staging sign-ups" --timeout 120)
 ```
 
-One dependency, [`cleat-js`](https://github.com/davidcleat/cleat-js). Node 20 or newer.
+One dependency, [`cleatapi`](https://github.com/davidcleat/cleat-js). Node 20 or newer.
 
 ## What Cleat is
 
@@ -18,20 +18,18 @@ Cleat is for your own accounts, or your company's: the cloud console, the regist
 
 ## Install
 
-Not on npm yet — run it straight from this repository:
+```sh
+npm install -g cleatapi-cli
+cleat lines
+```
+
+The package is `cleatapi-cli` and it installs two names for the same command, `cleat` and `cleatapi`. The bare name `cleat` on npm belongs to an unrelated command line tool published in 2015, so `npx cleat` would run that instead of this.
+
+Until the first release lands on npm, run it from this repository:
 
 ```sh
 npx github:davidcleat/cleat-cli lines
 ```
-
-or install it so the command is on your path:
-
-```sh
-npm install -g github:davidcleat/cleat-cli
-cleat lines
-```
-
-The package is called `cleat-cli` and the command it installs is `cleat`. The bare name `cleat` on npm belongs to an unrelated command line tool published in 2015, so `npx cleat` would run that instead of this.
 
 ## Use it
 
@@ -141,13 +139,11 @@ A key belongs to one workspace. You can narrow it when you create it: to named l
 ## Development
 
 ```sh
-git clone <this repo> cleat-cli
-git clone <the cleat-js repo> cleat-js   # side by side
-cd cleat-js && npm install && npm run build
-cd ../cleat-cli && npm install && npm test
+git clone https://github.com/davidcleat/cleat-cli.git
+cd cleat-cli && npm install && npm test
 ```
 
-`cleat-js` is a path dependency (`file:../cleat-js`) while neither package is published. Every command takes its client, its output writers and its clock as arguments, so the tests use a fake client: no network, no sleeping, no API key.
+`npm install` fetches `cleatapi` from its own repository and builds it, so nothing has to be checked out beside this. The lockfile is not committed: npm rewrites a GitHub dependency to `git+ssh`, which fails for anyone without SSH keys on GitHub. Every command takes its client, its output writers and its clock as arguments, so the tests use a fake client: no network, no sleeping, no API key.
 
 `CLEAT_BASE_URL` points the CLI at another host, which is how you drive it against a local stub of the API.
 
@@ -155,7 +151,7 @@ cd ../cleat-cli && npm install && npm test
 
 - [cleat.so](https://cleat.so)
 - [cleat.so/for/developers](https://cleat.so/for/developers) — the API reference and the webhook contract
-- `cleat-js` — the TypeScript client this is built on
+- [`cleatapi`](https://github.com/davidcleat/cleat-js) — the TypeScript client this is built on
 
 ## License
 

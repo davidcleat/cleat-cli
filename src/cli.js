@@ -6,7 +6,7 @@
  * replaced through the second argument.
  */
 import { parseArgs } from "node:util";
-import { CleatClient, CleatError } from "cleat-js";
+import { CleatClient, CleatError } from "cleatapi";
 import { codesCommand, linesCommand, waitCommand } from "./commands.js";
 import { EXIT } from "./exit-codes.js";
 import { describeError } from "./format.js";

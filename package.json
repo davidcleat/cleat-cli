@@ -1,5 +1,5 @@
 {
-  "name": "cleat-cli",
+  "name": "cleatapi-cli",
   "version": "0.1.0",
   "description": "Command line access to your Cleat lines: list them, stream the codes that arrive, or block until one does.",
   "license": "MIT",
@@ -22,7 +22,8 @@
     "node": ">=20"
   },
   "bin": {
-    "cleat": "./bin/cleat.js"
+    "cleat": "./bin/cleat.js",
+    "cleatapi": "./bin/cleat.js"
   },
   "exports": {
     ".": "./src/cli.js"
@@ -38,6 +39,6 @@
     "cleat": "node ./bin/cleat.js"
   },
   "dependencies": {
-    "cleat-js": "git+https://github.com/davidcleat/cleat-js.git"
+    "cleatapi": "git+https://github.com/davidcleat/cleat-js.git"
   }
 }

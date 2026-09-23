@@ -2,7 +2,7 @@
  * The three commands. Each one takes everything it touches as an argument — the client,
  * where to write, the clock — so the tests can run them without a network or a wait.
  */
-import { CleatTimeoutError } from "cleat-js";
+import { CleatTimeoutError } from "cleatapi";
 import { EXIT } from "./exit-codes.js";
 import { formatLines, formatMessage } from "./format.js";
 

@@ -1,5 +1,5 @@
 /** A stand-in for CleatClient. No network, no waiting. */
-import { CleatTimeoutError } from "cleat-js";
+import { CleatTimeoutError } from "cleatapi";
 
 export const LINE = {
   id: "8f14e45f-ceea-4b6b-9d3c-2a1f0e7c5b10",
