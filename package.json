@@ -1,0 +1,43 @@
+{
+  "name": "cleat-cli",
+  "version": "0.1.0",
+  "description": "Command line access to your Cleat lines: list them, stream the codes that arrive, or block until one does.",
+  "license": "MIT",
+  "author": "Hyppe Tech LLC",
+  "homepage": "https://cleat.so/for/developers",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidcleat/cleat-cli.git"
+  },
+  "keywords": [
+    "cleat",
+    "cli",
+    "sms",
+    "2fa",
+    "otp",
+    "verification-code"
+  ],
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "cleat": "./bin/cleat.js"
+  },
+  "exports": {
+    ".": "./src/cli.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "cleat": "node ./bin/cleat.js"
+  },
+  "dependencies": {
+    "cleat-js": "git+https://github.com/davidcleat/cleat-js.git"
+  }
+}

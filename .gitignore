@@ -1,0 +1,8 @@
+node_modules/
+# npm rewrites the cleat-js git dependency to git+ssh in the lockfile, which fails
+# for anyone without GitHub SSH keys. package.json pins it over https instead.
+package-lock.json
+.env
+.env.*
+.DS_Store
+npm-debug.log*
